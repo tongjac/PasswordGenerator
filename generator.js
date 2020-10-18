@@ -14,6 +14,7 @@ var isSpec = false;
 var isEmoji = false;
 var passInclude = [];
 var password = "";
+var checkAgain = true;
 
 
 // 
@@ -27,11 +28,12 @@ function passLengthConfirm(){
        alert("Invalid character count. Try again please.")
    } 
    else {
-   confirmation();
+   charConfirmation();
+    }
 }
 
 // Function for confirming what types of characters the user wants
-function confirmation(){  
+function charConfirmation(){  
     // Resets passInclude's array in case users want a different customized password.
     passInclude = [];
     isLower = confirm("Do you want lowercase letters?");
@@ -44,11 +46,11 @@ function confirmation(){
     if (isNum) {passInclude.push(numChar);}
     if (isSpec) {passInclude.push(specialChar);}
     if (isEmoji) {passInclude.push(emoji);}
-    console.log(passInclude);
     // If user chooses None for these options, they have to repeat the process instead of proceeding.
     if (isLower == false && isUpper == false && isNum == false && isSpec == false && isEmoji == false) {
         alert("Your password must have some characters. Please try again.")
     } else {
+        checkAgain = false;
         generation();
     }
 }
@@ -71,15 +73,23 @@ function generation(){
     document.querySelector("#password-display").textContent = password;
 }
 
-}
 
-// What happens when you click the button
+// Starts the password generation process when you click the button
 document.querySelector("#generate-password-button").addEventListener("click", function(event) {
     event.preventDefault(); 
     passLengthConfirm();
 });
 
-
+// Allow users to create another Password without going through prompts, but only after successfully passing passLengthConfirm and charConfirmation which sets the checkAgain variable to false.
+document.querySelector("#generate-again").addEventListener("click", function(event) {
+    event.preventDefault(); 
+    if (checkAgain){
+        alert("Please set password criteria first.");
+    } 
+    else {
+    generation();
+    }
+});
 
 
 
