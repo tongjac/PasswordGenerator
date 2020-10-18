@@ -25,4 +25,5 @@ Option to generate password with previously-set criteria.
 
 Password displayed on the page in a Read-Only text box.
 
-![Password Generator Demo] ()
+#Demo Preview
+![image] (https://raw.githubusercontent.com/tongjac/Password_Generator/main/Assets/PassGen_Demo.png)
