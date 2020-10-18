@@ -50,6 +50,7 @@ function charConfirmation(){
     // If user chooses None for these options, they have to repeat the process instead of proceeding.
     if (isLower == false && isUpper == false && isNum == false && isSpec == false && isEmoji == false) {
         alert("Your password must have some characters. Please try again.")
+        checkAgain = true;
         console.log("User used none of the listed characters.");
     } else {
         checkAgain = false;
