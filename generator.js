@@ -1,11 +1,11 @@
-// Created Arrays containing 
+// Created Arrays containing possible characters the generator can use.
 var lowerChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var upperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var numChar = [0, 1, 2, 3, 4, 5, 6, 8, 9];
 var specialChar = ["!", "@", "#", "$", "%", "^", "&", "*", "("];
 var emoji = ["😊","👍","🙌","😍","😒","❤","🤣","💕"];
 
-// User-dependent input
+// User-dependent input variables
 var passwordLength = "";
 var isLower = false;
 var isUpper = false;
@@ -17,7 +17,7 @@ var password = "";
 var checkAgain = true;
 
 
-// 
+// Function that confirms the user inputting a usable password length.
 function passLengthConfirm(){
     passwordLength = parseInt(prompt("How long do you want your password to be? (8-128 characters)"));
     // Debug check to see what user input is interpretted as.
