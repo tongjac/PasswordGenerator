@@ -1,6 +1,6 @@
 // Created Arrays containing 
-var lowerChar = ["a", "b", "c", "d", "e", "f", "g", "h", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var upperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var lowerChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var upperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var numChar = [0, 1, 2, 3, 4, 5, 6, 8, 9];
 var specialChar = ["!", "@", "#", "$", "%", "^", "&", "*", "("];
 var emoji = ["😊","👍","🙌","😍","😒","❤","🤣","💕"];
@@ -55,9 +55,20 @@ function confirmation(){
 
 // Function for actually generating the password and pushing it to display on the HTML.
 function generation(){
+    // Resets the Password variable so generator can keep making new passwords.
+    password = "";
     for (let i = 0; i < passwordLength; i++) {
-
+        if (password.length < passwordLength) {
+            let total = Math.floor(Math.random() * passInclude.length);
+            let within = Math.floor(Math.random() * passInclude[total].length)
+            // Debug 
+            console.log("Total: " + total + ", and i is: " + i);
+            console.log("PassInclude at i:" + passInclude[total] + "and passinclude[i].length : " + passInclude[total].length);
+            console.log("pass include at Total: " + passInclude[total]);
+            password += passInclude[total][within];
+          }
     }
+    document.querySelector("#password-display").textContent = password;
 }
 
 }
