@@ -84,8 +84,8 @@ document.querySelector("#generate-password-button").addEventListener("click", fu
 // Allow users to create another Password without going through prompts, but only after successfully passing passLengthConfirm and charConfirmation which sets the checkAgain variable to false.
 document.querySelector("#generate-again").addEventListener("click", function(event) {
     event.preventDefault(); 
-    if (checkAgain){
-        alert("Please set password criteria first.");
+    if (checkAgain || isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128){
+        alert("Please set valid password criteria first.");
     } 
     else {
     generation();
