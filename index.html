@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" src="./style.css">
+    <link rel="stylesheet" src="./Assets/style.css">
     <title>Jacky's Password Generator</title>
 </head>
 <body>
@@ -15,24 +15,27 @@
               </header>
         </div>
         <div class="card-body">
-          <center><textarea rows="4" cols="50"
-            readonly
-            id="password-display"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea></center>
+            <center>
+              <textarea rows="4" cols="50" readonly id="password-display" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
+            </center>
         </div>
         <div class="card-footer">
-          <center><button id=generate-password-button class="btn-success">Generate New Password</button> <button id=generate-again class="btn-primary">Generate Again Without Changing Settings</button></center>
+            <center>
+              <button id=generate-password-button class="btn">Generate New Password</button> <button id=generate-again class="btn">Generate Again Without Changing Settings</button>
+            </center>
         </div>
       </div>
     <!-- Generator Script -->
-    <script src="./generator.js"></script>
+    <script src="./Assets/generator.js"></script>
 
     <!-- Reactive Styling Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
+    <footer id="sticky-footer" class="footer fixed-bottom mt-auto py-3 bg-light border-top border-primary">
+        <div class="container">
+            <span class="text-dark">Copyright 2020</span>
+        </div>
+      </footer>
 </body>
 </html>

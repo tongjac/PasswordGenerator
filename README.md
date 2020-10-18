@@ -24,3 +24,5 @@ Option to generate password with previously-set criteria.
 - Displayed as an additional button
 
 Password displayed on the page in a Read-Only text box.
+
+![Password Generator Demo] ()
