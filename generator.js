@@ -5,7 +5,7 @@ var numChar = [0, 1, 2, 3, 4, 5, 6, 8, 9];
 var specialChar = ["!", "@", "#", "$", "%", "^", "&", "*", "("];
 var emoji = ["😊","👍","🙌","😍","😒","❤","🤣","💕"];
 
-// User
+// User-dependent input
 var passwordLength = "";
 var isLower = false;
 var isUpper = false;
@@ -13,13 +13,14 @@ var isNum = false;
 var isSpec = false;
 var isEmoji = false;
 var passInclude = [];
+var password = "";
 
 
 // 
 function passLengthConfirm(){
     passwordLength = parseInt(prompt("How long do you want your password to be? (8-128 characters)"));
     // Debug check to see what user input is interpretted as.
-    console.log(`Parsed entered password length is: $ {passwordLength} .`);
+    console.log(`Parsed entered password length is: ${passwordLength} .`);
 
     if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
         // If they enter strings, strange characters, or numbers out of the range, code won't proceed and alert asks user to try again.
@@ -27,7 +28,6 @@ function passLengthConfirm(){
    } 
    else {
    confirmation();
-   generation();
 }
 
 // Function for confirming what types of characters the user wants
@@ -44,12 +44,19 @@ function confirmation(){
     if (isNum) {passInclude.push(numChar);}
     if (isSpec) {passInclude.push(specialChar);}
     if (isEmoji) {passInclude.push(emoji);}
+    console.log(passInclude);
+    // If user chooses None for these options, they have to repeat the process instead of proceeding.
+    if (isLower == false && isUpper == false && isNum == false && isSpec == false && isEmoji == false) {
+        alert("Your password must have some characters. Please try again.")
+    } else {
+        generation();
+    }
 }
 
-//Function for actually generating the password
+// Function for actually generating the password and pushing it to display on the HTML.
 function generation(){
     for (let i = 0; i < passwordLength; i++) {
-        
+
     }
 }
 
