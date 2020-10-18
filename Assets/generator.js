@@ -62,7 +62,8 @@ function generation(){
     // Resets the Password variable so generator can keep making new passwords.
     password = "";
     for (let i = 0; i < passwordLength; i++) {
-        if (password.length < passwordLength) {
+        // Did not use password.Length as a comparison due to bug of emojis being counted as 2 characters.
+        if (i < passwordLength) {
             let total = Math.floor(Math.random() * passInclude.length);
             let within = Math.floor(Math.random() * passInclude[total].length)
             // Debug, see if Total can actually match the number of arrays in passInclude as well as which array and length of array chosen.
