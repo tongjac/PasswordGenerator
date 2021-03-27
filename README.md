@@ -2,7 +2,7 @@
 
 This repository houses a password generator built to generate a customized powerful passphrase.
 
-#
+[Check out the live deployment here!](https://tongjac.github.io/Password_Generator/)
 
 ## Features
 
